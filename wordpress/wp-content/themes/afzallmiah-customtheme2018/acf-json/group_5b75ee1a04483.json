@@ -1,0 +1,167 @@
+{
+    "key": "group_5b75ee1a04483",
+    "title": "Single Photography Project",
+    "fields": [
+        {
+            "key": "field_5b75ee29c6d7d",
+            "label": "Project Information",
+            "name": "project_information",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "hide_admin": 0,
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5b75eeaa395e1",
+                    "label": "Project Information Title",
+                    "name": "project_information_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5b75ee5bc6d80",
+                    "label": "About the Project",
+                    "name": "about_the_project",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5b785f6613209",
+                    "label": "Project Gallery Style",
+                    "name": "project_gallery_style",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "choices": {
+                        "Rows (Horizontal)": "Rows (Horizontal)",
+                        "Columns (Vertical)": "Columns (Vertical)"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": "Rows (Horizontal)",
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5b78671f84d3d",
+                    "label": "How Many Columns?",
+                    "name": "gallery_column_count",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5b785f6613209",
+                                "operator": "==",
+                                "value": "Columns (Vertical)"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "choices": {
+                        "3": "3",
+                        "4": "4"
+                    },
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "default_value": 4,
+                    "layout": "horizontal",
+                    "return_format": "value",
+                    "save_other_choice": 0
+                },
+                {
+                    "key": "field_5b75ee61c6d81",
+                    "label": "Project Images",
+                    "name": "project_images",
+                    "type": "gallery",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "hide_admin": 0,
+                    "min": "",
+                    "max": "",
+                    "insert": "append",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "am_photography_proj"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "recaptcha": 0,
+    "modified": 1535149690
+}
