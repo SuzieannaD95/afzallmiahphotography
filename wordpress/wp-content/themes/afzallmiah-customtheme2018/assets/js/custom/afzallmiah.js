@@ -10,6 +10,8 @@
 				fn.setFullHeightHeroImageHeight();
 				fn.setHalfHeightHeroImageHeight();
 				fn.setPhotographyProjectsBlockImageCaptionWidths();
+				fn.setBlankPhotographyStyleHeight();
+				fn.setPhotographyStyleHeight();
 			},
 
 			setFullCarouselOverlayDivHeight: function()
@@ -26,19 +28,39 @@
 
 			setHalfHeightHeroImageHeight: function()
 			{
-				var full_height = jQuery( window ).height();
-				var height = (full_height / 100) * 45;
+				var fullHeight = jQuery( window ).height();
+				var height = (fullHeight / 100) * 45;
 				jQuery('.half-height-hero-image').css("height", height)
 			},
 
 			setPhotographyProjectsBlockImageCaptionWidths: function()
 			{
-				var image_containers = jQuery('.js--image-container-caption-overlay');
-				image_containers.each(function(i, elem) {
-					var selected_img_width = jQuery(elem).width();
-					var selected_caption = jQuery(elem).find('.image-caption');
-					jQuery(selected_caption).css("width", (selected_img_width - 30));
+				var imageContainers = jQuery('.js--image-container-caption-overlay');
+				imageContainers.each(function(i, elem) {
+					var selectedImgWidth = jQuery(elem).width();
+					var selectedCaption = jQuery(elem).find('.image-caption');
+					jQuery(selectedCaption).css("width", (selectedImgWidth - 29));
 				});
+			},
+
+			setBlankPhotographyStyleHeight: function()
+			{
+				var photographyStyleImage = jQuery('.photography-styles-slider .slides li img').height();
+				jQuery('.js--blank-photography-style').css("height", photographyStyleImage);
+			},
+
+			setPhotographyStyleHeight: function()
+			{
+				var largestHeight = 0;
+				var photographyStyles = jQuery('.photography-styles-slide');
+				jQuery(photographyStyles).each(function(i, elem) {
+					if (jQuery(elem).height() > largestHeight)
+					{
+						largestHeight = jQuery(elem).height();
+					}
+				});
+
+				jQuery('.photography-styles-slide').css("height", (largestHeight + 30));
 			},
 
 		}

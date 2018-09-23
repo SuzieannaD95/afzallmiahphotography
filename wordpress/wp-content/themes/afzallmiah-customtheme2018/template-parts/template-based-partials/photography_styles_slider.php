@@ -2,45 +2,38 @@
 if( !defined( 'ABSPATH' ) ) { exit; }
 
 /* Classes Used In This Flex-Content
-
-
+photography-styles-slider
+js--blank-photography-style
 
 
 */
 $background_colour = get_field('background_colour');
-
-$post_type = AM_Core::$PHOTOGRAPHY_STYLE_CPT;
-
-$args = array(
-    'post_type' => $post_type,
-    'post_status' => 'publish',
-);
-
-$photography_styles_query = new WP_Query($args);
-
-$all_photography_styles = $photography_styles_query->posts;
+$photography_styles_to_show = get_field('photography_styles_to_show');
 
 echo "<div class='photography-styles-slider' style='background: $background_colour;'>";
     echo "<ul class='slides'>";
-    if ($all_photography_styles)
+    echo "<li class='js--blank-photography-style'></li>";
+    if ($photography_styles_to_show)
     {
-        foreach ($all_photography_styles as $photography_style)
+        foreach ($photography_styles_to_show as $photography_style_array)
         {
+            $photography_style = $photography_style_array['photography_style'];
             $photography_style_name = get_the_title($photography_style);
-            $photography_style_image = wp_get_attachment_url(get_post_thumbnail_id($photography_style->ID));
             $photography_style_excerpt = get_the_excerpt($photography_style);
-            echo "<li>";
-                echo "<div class='flex-item third-width'>";
-                    echo "<img class='responsive' src='$photography_style_image'/>";
-                    echo "<div class='image-bottom-caption'>";
-                        echo $photography_style_name;
-                        echo $photography_style_excerpt;
-                    echo "</div>";
+            echo "<li class='photography-styles-slide'>";
+            echo get_the_post_thumbnail($photography_style->ID, 'photography_styles_slider_thumbnail', array(
+                'class'=> 'responsive',
+                'alt' => ''
+                ));
+                echo "<div class='image-bottom-caption'>";
+                    echo "<h3>$photography_style_name</h3>";
+                    echo "<p>$photography_style_excerpt</p>";
                 echo "</div>";
             echo "</li>";
           }
 
     }
+    echo "<li class='js--blank-photography-style'></li>";
     echo "</ul>";
 echo "</div>";
 ?>

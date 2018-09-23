@@ -26,25 +26,53 @@ body, html
 	display: flex;
 	flex-wrap: wrap;
 }
+    @include breakpoint(tablet)
+    {
+        .flex-container
+        {
+            display: block;
+        }
+    }
 .flex-item
 {
 	padding: 10px;
     position: relative;
     margin: 0 auto;
 }
+@include breakpoint(tablet)
+{
+    .flex-item
+    {
+        padding: 10px 0px;
+    }
+}
 
 .full-width
 {
     max-width: 100%;
 }
-.half-width, .narrow-text-width
+.half-width
 {
     max-width: 50%;
 }
+    @include breakpoint(mobile-lg)
+    {
+        .half-width
+        {
+            max-width: 100%;
+        }
+    }
 .third-width
 {
     max-width: 30%;
 }
+    @include breakpoint(mobile-lg)
+    {
+        .third-width
+        {
+            max-width: 100%;
+        }
+    }
 .width-40pc
 {
     max-width: 40%;
@@ -52,6 +80,14 @@ body, html
 .wide-text-width
 {
     max-width: 90%;
+}
+.narrow-text-width
+{
+    max-width: 65%;
+}
+.narrow-text-width > .half-width
+{
+    max-width: 47%;
 }
 .total-center
 {
@@ -97,25 +133,6 @@ body, html
     padding: 7.5px;
 }
 
-
-
-@include breakpoint(tablet)
-{
-    .wide-text-width
-    {
-        max-width: 90%;
-    }
-
-    .flex-container
-    {
-        display: block;
-    }
-    .flex-item
-    {
-        padding: 10px 0px;
-    }
-}
-
 @media (min-width: 426px)
 {
     .mobile-hide // Used in: equal_height_rows_gallery;
@@ -142,13 +159,5 @@ body, html
     .desktop-hide // Used in: equal_height_rows_gallery;
     {
         display: block;
-    }
-    .third-width
-    {
-        max-width: 100%;
-    }
-    .half-width
-    {
-        max-width: 100%;
     }
 }
