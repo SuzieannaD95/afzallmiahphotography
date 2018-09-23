@@ -17,6 +17,49 @@
             },
             "hide_admin": 0,
             "default_value": ""
+        },
+        {
+            "key": "field_5ba7b16b09caf",
+            "label": "Photography Styles to Show",
+            "name": "photography_styles_to_show",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "table",
+            "button_label": "Add another Photography Style",
+            "sub_fields": [
+                {
+                    "key": "field_5ba7b18a09cb0",
+                    "label": "Photography Style",
+                    "name": "photography_style",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "am_photography_style"
+                    ],
+                    "taxonomy": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                }
+            ]
         }
     ],
     "location": [
@@ -36,6 +79,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "recaptcha": 0,
-    "modified": 1535152371
+    "modified": 1537716796
 }

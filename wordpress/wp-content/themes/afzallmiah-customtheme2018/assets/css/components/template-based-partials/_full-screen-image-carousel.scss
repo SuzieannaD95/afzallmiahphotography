@@ -1,43 +1,69 @@
 .full-screen-image-carousel
 {
-  min-height: 100%;
-  min-width: 1024px;
-  width: 100%;
-  height: auto;
-  top: 0;
-  left: 0;
-  border: none;
-  position: fixed;
-  margin: 0px;
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: auto;
+	top: 0;
+	left: 0;
+	border: none;
+	position: fixed;
+	margin: 0px;
 }
+  @include breakpoint(tablet)
+  {
+	.full-screen-image-carousel
+	{
+		left: -20%;
+	}
+  }
+  @include breakpoint(mobile-lg)
+  {
+	.full-screen-image-carousel
+	{
+		left: -90%;
+		z-index: -1;
+	}
+  }
+  @include breakpoint(mobile-md)
+  {
+	.full-screen-image-carousel
+	{
+		left: -110%;
+	}
+  }
+  @include breakpoint(mobile-sm)
+  {
+	.full-screen-image-carousel
+	{
+		left: -145%;
+	}
+  }
 
-.flex-control-nav
+.full-screen-image-carousel .flex-control-nav
 {
-    position: fixed;
-    z-index: 2;
-    top: 53%;
-    left: 24%;
-    text-align: left;
+	position: fixed;
+	z-index: 2;
+	top: 53%;
+	left: 24%;
+	text-align: left;
 }
-
-.flex-control-paging li a
+.full-screen-image-carousel .flex-control-paging li a
 {
-  background: #FFF!important;
+	background: #FFF!important;
 }
-
-.flex-control-paging li a.flex-active
+.full-screen-image-carousel .flex-control-paging li a.flex-active
 {
-  background: rgb(182, 31, 31)!important;
+	background: rgb(182, 31, 31)!important;
 }
 .full-screen-image-carousel-content
 {
-  z-index: 0;
-  position: fixed;
-  text-align: center;
-  top: 20%;
+	z-index: 0;
+	position: fixed;
+	text-align: center;
+	top: 20%;
 	left: 7%;
 }
-
 
 .full-screen-image-carousel-overlay-div
 {
@@ -47,55 +73,20 @@
 .social-media-icons-fixed-bottom-left,
 .social-media-icons-fixed-bottom-right
 {
-    z-index: 1;
-    position: absolute;
-    bottom: 15px;
+	z-index: 1;
+	position: absolute;
+	bottom: 15px;
 }
 .social-media-icons-fixed-bottom-left
 {
-    left: 15px;
+	left: 15px;
 }
 .social-media-icons-fixed-bottom-right
 {
-    right: 15px;
+	right: 15px;
 }
 .indv-social-media-icon-fixed-bottom
 {
-    max-width: 40px;
-    margin: 15px 10px;
-}
-
-@include breakpoint(tablet)
-{
-  .full-screen-image-carousel
-  {
-    left: -20%;
-  }
-}
-
-
-@include breakpoint(mobile-lg)
-{
-  .full-screen-image-carousel
-  {
-    left: -90%;
-    z-index: -1;
-  }
-}
-
-@include breakpoint(mobile-md)
-{
-  .full-screen-image-carousel
-  {
-    left: -110%;
-  }
-}
-
-
-@include breakpoint(mobile-sm)
-{
-  .full-screen-image-carousel
-  {
-    left: -145%;
-  }
+	max-width: 40px;
+	margin: 15px 10px;
 }

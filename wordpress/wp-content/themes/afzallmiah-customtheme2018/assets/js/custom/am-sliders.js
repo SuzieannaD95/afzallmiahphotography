@@ -6,10 +6,11 @@
 
 			init: function()
 			{
-				fn.startCarousels();
+				fn.startFlexSliderCarousels();
+				fn.startFlexSlider();
 			},
 
-			startCarousels: function()
+			startFlexSliderCarousels: function()
 			{
 				jQuery(window).load(function()
 				{
@@ -41,17 +42,28 @@
 						slideshow: true,
 						slideshowSpeed: 5000,
 					});
-					jQuery('.photography-styles-slider').flexslider({
-						animation: "slide",
-						animationLoop: true,
-						itemWidth: 210,
-						controlNav: false,
-						itemMargin: 0,
-						slideshow: false,
-						move: 1,
-					});
 		    	});
 			},
+
+			startFlexSlider: function()
+			{
+				jQuery(window).load(function()
+				{
+					jQuery('.photography-styles-slider').flexslider({
+						animation: "slide",
+						animationLoop: false,
+						slideshow: true,
+						controlNav: false,
+						directionNav: true,
+						itemWidth: 300,
+						itemMargin: 30,
+						minItems: 2,
+						maxItems: 3,
+						move: 1,
+						startAt: 1,
+					});
+				});
+			}
 		}
 
 		jQuery(document).ready(fn.init);

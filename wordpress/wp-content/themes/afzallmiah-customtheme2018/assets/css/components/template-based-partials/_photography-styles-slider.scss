@@ -1,0 +1,32 @@
+.photography-styles-slider
+{
+    padding: 3% 10%;
+    position: relative;
+
+}
+.photography-styles-slider .photography-styles-slide
+{
+    background: #ededed;
+    padding: 5px;
+}
+.image-bottom-caption
+{
+    padding: 15px;
+    padding-top: 0px;
+}
+.image-bottom-caption p
+{
+    line-height: 1.5em;
+}
+.photography-styles-slider .flex-direction-nav li a
+{
+    opacity: 1;
+}
+.photography-styles-slider .flex-direction-nav .flex-prev
+{
+    left: 5%;
+}
+.photography-styles-slider .flex-direction-nav .flex-next
+{
+    right: 5%;
+}
