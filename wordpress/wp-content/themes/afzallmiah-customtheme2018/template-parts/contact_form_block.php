@@ -11,12 +11,12 @@ echo "<div class='container' style='background: $background_colour; color: $text
     echo "<h2>$title</h2>";
     echo "<p>$tagline</p>";
 
-   /* $args = array(
-        'id' => 'form_5b708d7dc9fda',
+    $args = array(
+        'id' => 'form_5ba7dc0b83fcf',
         'submit_text' => 'Submit'
     );
 
-    $form = advanced_form('form_5b708d7dc9fda', $args);*/
+    $form = advanced_form('form_5ba7dc0b83fcf', $args);
 
 echo "</div>";
 
