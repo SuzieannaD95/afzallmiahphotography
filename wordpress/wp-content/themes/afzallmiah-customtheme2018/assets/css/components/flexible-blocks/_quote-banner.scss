@@ -1,0 +1,44 @@
+// .container in _base.scss
+.quote-banner
+{
+  max-width: 70%;
+  margin: 0 auto;
+}
+.quote
+{
+	position: relative;
+	display: block;
+  margin-bottom: 20px;
+}
+.quote::before,
+.quote::after
+{
+	content: "";
+	position: absolute;
+	background-size: 100% auto;
+	background-image: url(../afzallmiah-customtheme2018/assets/images/speechmarks.svg);
+	background-repeat: no-repeat;
+	width: 44px;
+	height: 44px;
+	display: inline-block;
+}
+.quote::before
+{
+	left: -0px;
+}
+.quote::after
+{
+	right: -0px;
+	display: inline-block;
+	transform: rotate(-180deg);
+	top: 30px;
+}
+.author
+{
+  font-size: 20px;
+  font-style: italic;
+}
+.quote p
+{
+	margin: 0px 60px;
+}

@@ -1,0 +1,62 @@
+/*!
+Theme Name: AfzallMiah
+Author: Suzie Douglas
+version: 1.0
+*/
+
+@mixin breakpoint($point) {
+	@if $point == desktop-only {
+		//1440px and up
+		@media (min-width: 1440px) { @content; }
+	}
+	@else if $point == laptop {
+		//laptop and bigger
+		@media (min-width: 1024px) { @content; }
+	}
+	@else if $point == tablet {
+		//tablet
+		@media (max-width: 768px) { @content; }
+	}
+	@else if $point == mobile-lg {
+		//mobile large
+		//original in designs:  (max-width: 320px)
+		@media (max-width: 425px) { @content; }
+	}
+	@else if $point == mobile-md {
+		//mobile medium
+		//original in designs:  (max-width: 320px)
+		@media (max-width: 375px) { @content; }
+	}
+	@else if $point == mobile-sm {
+		//mobile small
+		//original in designs:  (max-width: 320px)
+		@media (max-width: 320px) { @content; }
+	}
+
+	@else {
+		@warn "`#{$point}` is not a valid breakpoint.";
+	}
+}
+
+@import 'third-party/flexslider';
+
+@import 'variables';
+
+@import 'base/admin-menu';
+@import 'base/base';
+@import 'base/clearfix';
+@import 'base/colours';
+@import 'base/text-styling';
+@import 'base/header';
+@import 'base/footer';
+
+@import 'components/contact-form-block';
+@import 'components/photography_projects_block';
+
+@import 'components/flexible-blocks/equal_height_rows_gallery';
+@import 'components/flexible-blocks/image-with-text-overlay';
+@import 'components/flexible-blocks/quote-banner';
+
+@import 'components/template-based-partials/full-screen-image-carousel';
+@import 'components/template-based-partials/hero-image';
+@import 'components/template-based-partials/photography_project_info';
